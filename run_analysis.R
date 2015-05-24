@@ -31,7 +31,7 @@ x_train <- read.table(file="UCI HAR Dataset/train/X_train.txt",col.names = featu
 y_train <- read.table(file="UCI HAR Dataset/train/y_train.txt",sep=" ")
 
 #reduce x_test and x_train to get only mean and std (-> Q2)
-idxMeanAndSTD <- grep("mean|std",names(x_test))
+idxMeanAndSTD <- grep("mean[^F]|std",names(x_test))
 x_testReduced <-x_test[,idxMeanAndSTD]
 x_trainReduced <-x_train[,idxMeanAndSTD]
 
